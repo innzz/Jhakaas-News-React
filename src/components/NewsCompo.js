@@ -9,7 +9,7 @@ export class NewsCompo extends Component {
         "source": {
             "id": "ign",
             "name": "IGN"
-        },
+        },kugfkhrbg rrugrhg u g sriy ;gfr
         "author": "Ryan Leston",
         "title": "Doctor Strange in the Multiverse of Madness Won't Be One of the MCU's Longest Movies, Despite Rumors - IGN",
         "description": "It looks as though Doctor Strange in the Multiverse of Madness won’t be one of the MCU’s longest films after all, despite rumors to the contrary.",
