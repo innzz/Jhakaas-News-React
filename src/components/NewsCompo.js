@@ -4,11 +4,60 @@ import NewsItems from './NewsItems'
 
 
 export class NewsCompo extends Component {
-  getData() {
-    fetch('https://newsapi.org/v2/top-headlines?apiKey=eac5e8d953e14688b3a94f5614f62fa9&q=movies').then((response)=>{response.json()}).then((data)=>{ articles = data}); 
-  };ljbvbevur iurureug ;regljrgegu gg er gurg uojlbdjvb uhvfdh
-  this.getData();
-
+  articles = [
+    {
+        "source": {
+            "id": "ign",
+            "name": "IGN"
+        },
+        "author": "Ryan Leston",
+        "title": "Doctor Strange in the Multiverse of Madness Won't Be One of the MCU's Longest Movies, Despite Rumors - IGN",
+        "description": "It looks as though Doctor Strange in the Multiverse of Madness won’t be one of the MCU’s longest films after all, despite rumors to the contrary.",
+        "url": "https://www.ign.com/articles/doctor-strange-in-the-multiverse-of-madness-not-one-of-the-mcu-longest-films",
+        "urlToImage": "https://assets-prd.ignimgs.com/2022/02/18/doctor-strange-in-the-multiverse-of-madness-poster-1645212019835.jpg?width=1280",
+        "publishedAt": "2022-04-11T11:28:57Z",
+        "content": "It looks as though Doctor Strange in the Multiverse of Madness wont be one of the MCUs longest films after all.\r\nAccording to ticket slaes website Fandango, the upcoming Doctor Strange sequel clocks … [+1609 chars]"
+    },
+    {
+        "source": {
+            "id": "buzzfeed",
+            "name": "Buzzfeed"
+        },
+        "author": "Ajani Bazile",
+        "title": "37 Iconic Movies That Aged As Poorly As Unrefrigerated Cottage Cheese",
+        "description": "I'm shocked by how many messed-up things happened in Sixteen Candles.",
+        "url": "https://www.buzzfeed.com/ajanibazile/iconic-movies-that-are-problematic",
+        "urlToImage": "https://img.buzzfeed.com/buzzfeed-static/static/2022-04/6/19/enhanced/1d3a7425fc51/original-3136-1649272208-3.jpg?crop=1200:628;0,0%26downsize=1250:*",
+        "publishedAt": "2022-04-11T02:22:22.8468216Z",
+        "content": null
+    },
+    {
+        "source": {
+            "id": "recode",
+            "name": "Recode"
+        },
+        "author": "Peter Kafka",
+        "title": "WarnerMedia’s ex-boss Jason Kilar says you should be happy with the decline of movie theaters",
+        "description": "A chat with Jason Kilar on his two-year tenure, the future of movies and more.",
+        "url": "https://www.vox.com/recode/23010765/jason-kilar-warnermedia-movies-streaming-cnn-zucker-q-a",
+        "urlToImage": "https://cdn.vox-cdn.com/thumbor/mo6YBV2XcFtp8OrJY6evA28ycwQ=/0x0:2500x1309/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/23285536/B492110D_AA3A_4794_B63C_00BC169F083B.jpeg",
+        "publishedAt": "2022-04-05T15:30:00Z",
+        "content": "Some endings are surprising. This one is not: Jason Kilar, who has run WarnerMedia for the past two years, is leaving the company because it has a new owner who wants to run the entertainment conglom… [+7402 chars]"
+    },
+    {
+        "source": {
+            "id": "recode",
+            "name": "Recode"
+        },
+        "author": "Peter Kafka",
+        "title": "Why Amazon is buying MGM holdings and James Bond for $8.45 billion",
+        "description": "Amazon has been making its own movies and TV shows for as long as Netflix, without the same success.",
+        "url": "https://www.vox.com/recode/22451787/amazon-mgm-james-bond-streaming-netflix-analysis",
+        "urlToImage": "https://cdn.vox-cdn.com/thumbor/cG4u_JSUC43drZKsMEVgp_PJH1M=/0x0:1920x1005/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22536883/daniel_craig_james_bond_no_time_to_die.jpeg",
+        "publishedAt": "2021-05-24T21:40:00Z",
+        "content": "Update, March 17: Amazons $8.45 billion deal has closed, and the company announced that MGM will be joining Prime Video and Amazon Studios.\r\nBig tech companies have been eyeing big media companies fo… [+6155 chars]"
+    }
+]
   constructor(){
     super();
     this.state = {
@@ -17,16 +66,15 @@ export class NewsCompo extends Component {
     }
   }
   render() {
-    console.log(this.state.articles);
     return (
       <div className='container my-5'>
-        {/* <div className="row">
+        <div className="row">
         {this.state.articles.map((element)=>{
           return <div className="col-md-4" key={element.url}>
           <NewsItems title={element.title} description={element.description} imageUrl={element.urlToImage} newsUrl={element.url}/>
           </div>
         })}
-        </div> */}
+        </div>
       </div>
     )
   }
