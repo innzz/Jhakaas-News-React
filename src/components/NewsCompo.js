@@ -38,12 +38,13 @@ const NewsCompo = (props)=>{
 
   useEffect(()=>{
     updateNews();
+    // eslint-disable-next-line
   },[]);
 
 
   const fetchMoreData = async()=>{
-    setpage(page+1);
     let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page + 1}&pageSize=${props.pageSize}`
+    setpage(page+1);
     // setloading(true);
     let data = await fetch(url);
     let parsedData = await data.json()
@@ -54,7 +55,7 @@ const NewsCompo = (props)=>{
   
     return (
       <>
-       <div className='container my-5'>
+       <div className='container' style={{marginTop: "80px"}}>
         <h1>Top {capitalizeFirstLetter(props.category)} Headlines - Jhakaas News</h1>
         <hr />
         <InfiniteScroll
@@ -66,7 +67,7 @@ const NewsCompo = (props)=>{
           <div className="container my-4">
         <div className="row" style={{maxWidth: "64rem"}}>
         {articles.map((element,index)=>{
-          return <div className="col-md-4" key={index}>
+          return <div className="col-md-4" style={{zIndex:"-1"}} key={index}>
           <NewsItems title={element.title === null?deafaultTitle:element.title} description={element.description} imageUrl={element.urlToImage === null?defaultImg:element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name}/>
           </div>
         })}
